@@ -1,0 +1,115 @@
+/* Estilo general para la página */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ECF0F1; /* Fondo más claro */
+    margin: 0; /* Eliminar márgenes por defecto */
+    padding: 0; /* Eliminar padding por defecto */
+}
+
+.container {
+    padding-top: 30px; /* Agregar un poco de espacio al contenido */
+}
+
+h1 {
+    font-size: 2.5rem; /* Aumentar el tamaño del título */
+    color: #333;
+}
+
+/* Barra de navegación más grande, sin bordes redondeados y más alta */
+.navbar {
+    background-color: #2C3E50; /* Fondo oscuro para la navbar */
+    padding: 20px 40px; /* Aumentar el padding para hacerlo más grande */
+    border-radius: 0; 
+    height: 120px; /* Aumentar la altura del navbar */
+}
+
+/* Estilo de los elementos del menú */
+.navbar-nav {
+    list-style: none;
+    margin-bottom: 0; /* Eliminar el margen inferior */
+}
+
+.navbar-nav .nav-item {
+    margin-left: 30px; /* Separación más grande entre los enlaces */
+}
+
+/* Colocar los elementos del menú a la derecha */
+.navbar-nav.ms-auto {
+    margin-left: auto; /* Alineación a la derecha */
+}
+
+/* Estilo de los enlaces del menú */
+.navbar-nav .nav-link {
+    color: #ECF0F1 !important; /* Color claro para los links */
+    font-size: 1.4rem; /* Aumentar el tamaño de la fuente */
+    font-weight: 600; /* Hacer la fuente más pesada */
+    padding: 15px 25px; /* Aumentar el padding para hacer los enlaces más grandes */
+    border-radius: 0; /* Sin bordes redondeados */
+    transition: background-color 0.3s ease; /* Efecto de transición */
+}
+
+/* Estilo de los enlaces al pasar el ratón (hover) */
+.navbar-nav .nav-link:hover {
+    background-color: rgb(0, 132, 255); /* Color del fondo al pasar el ratón (verde-agua) */
+    color: white; /* Texto blanco en hover */
+}
+
+/* Mejorar el estilo de los botones */
+.btn-primary {
+    background-color: rgb(0, 132, 255); /* Color de fondo personalizado */
+    border-color: rgb(0, 132, 255); /* Bordes del botón */
+    padding: 12px 25px; /* Aumentar el tamaño del botón */
+    font-size: 1.2rem; /* Aumentar el tamaño de la fuente en el botón */
+}
+
+.btn-primary:hover {
+    background-color: rgb(0, 26, 255); /* Color de hover más claro */
+    border-color: rgb(0, 26, 255); /* Bordes del botón en hover */
+}
+
+/* Estilo para las tarjetas de valoraciones */
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para las estrellas de las valoraciones */
+.text-warning {
+    font-size: 1.5rem;
+}
+
+/* Estilo de los nombres y testimonios */
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Hover para productos y valoraciones */
+.hover-effect:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+/* Estilo para los productos destacados */
+.product-card img {
+    max-width: 100%; /* Asegurarse de que la imagen ocupe el 100% del ancho de la tarjeta */
+    max-height: 250px; /* Ajustar la altura máxima de las imágenes */
+    object-fit: cover; /* Mantener la relación de aspecto sin distorsión */
+}
+
+/* Hover para productos: aumentarlas y separarlas más */
+.product-card:hover {
+    transform: scale(1.1); /* Aumentar el tamaño de las tarjetas */
+    transition: transform 0.3s ease;
+}
+
+/* Separar más las tarjetas */
+.row .col-md-3 {
+    margin: 0 15px; /* Separar las tarjetas en el eje horizontal */
+}
