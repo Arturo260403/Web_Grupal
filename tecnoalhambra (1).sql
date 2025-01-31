@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-01-2025 a las 00:06:27
+-- Tiempo de generación: 31-01-2025 a las 12:04:07
 -- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.2.12
+-- Versión de PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -42,7 +42,8 @@ INSERT INTO `mensajes` (`ID`, `remitente`, `texto`) VALUES
 (2, 'Mario', 'hola buenas'),
 (3, 'jjj', 'hhhhh'),
 (4, 'jjj', 'hhhhh'),
-(5, 'Mario', 'eeeee');
+(5, 'Mario', 'eeeee'),
+(6, 'Julien', 'soy el rey de madagascar\r\n');
 
 -- --------------------------------------------------------
 
@@ -60,6 +61,32 @@ CREATE TABLE `productos` (
   `foto` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+--
+-- Volcado de datos para la tabla `productos`
+--
+
+INSERT INTO `productos` (`ID`, `nombre`, `descripcion`, `precio`, `descuento`, `stock`, `foto`) VALUES
+(1, 'HP Pavilion Gaming', 'Ryzen 5 4600H / GeForce GTX 1650 4GB / 8GB DDR4 / 512GB SSD', 799, 10, 50, '1.png'),
+(2, 'Dell Alienware m15', 'Intel Core i7-10750H / GeForce RTX 3060 6GB / 16GB DDR4 / 1TB SSD', 1499, 15, 30, '2.png'),
+(3, 'Asus ROG Strix G15', 'AMD Ryzen 7 5800H / GeForce RTX 3070 8GB / 16GB DDR4 / 1TB SSD', 1799, 5, 20, '3.png'),
+(4, 'Lenovo Legion 5', 'AMD Ryzen 5 5600H / GeForce GTX 1650 4GB / 8GB DDR4 / 512GB SSD', 949, 20, 40, '4.png\r\n'),
+(5, 'MSI GE66 Raider', 'Intel Core i9-11980HK / GeForce RTX 3080 16GB / 32GB DDR4 / 1TB SSD', 2399, 10, 25, '5.png\r\n'),
+(6, 'Acer Predator Helios 300', 'Intel Core i7-11800H / GeForce RTX 3070 8GB / 16GB DDR4 / 1TB SSD', 1699, 12, 35, '7.png\r\n');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `slider`
+--
+
+CREATE TABLE `slider` (
+  `id` int(11) NOT NULL,
+  `imagen` varchar(255) NOT NULL,
+  `descripcion` text DEFAULT NULL,
+  `activo` tinyint(1) DEFAULT 1,
+  `orden` int(11) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
 -- --------------------------------------------------------
 
 --
@@ -69,7 +96,7 @@ CREATE TABLE `productos` (
 CREATE TABLE `usuarios` (
   `ID` int(11) NOT NULL,
   `usuario` varchar(25) NOT NULL,
-  `password` varchar(25) NOT NULL
+  `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
@@ -77,7 +104,8 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`ID`, `usuario`, `password`) VALUES
-(2, 'admin', '$2y$10$Hory7f.PF/v.WIqWco');
+(4, 'admin', 'accesobackend'),
+(5, 'clase', '$2y$10$LPkB6wfFI0Ht6ngr3yfW3O.Py0jWNFj539rvt1wc2GXCRGXulFpf.');
 
 --
 -- Índices para tablas volcadas
@@ -96,6 +124,12 @@ ALTER TABLE `productos`
   ADD PRIMARY KEY (`ID`);
 
 --
+-- Indices de la tabla `slider`
+--
+ALTER TABLE `slider`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
@@ -109,19 +143,25 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `mensajes`
 --
 ALTER TABLE `mensajes`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de la tabla `slider`
+--
+ALTER TABLE `slider`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
